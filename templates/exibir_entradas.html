@@ -1,6 +1,18 @@
-<!DOCTYPE html>
+{% extends 'layout.html' %}
+{%block corpo%}
+    {%if session.logado%}    
+    <form action="{{url_for(inserir_entrada')}}" method="POST" class= 'ins-entrada'>
+        <dl>
+            <dt>Título:</dt>
+            <dd><input type="text" size="30" name="campoTitulo"></dd>
+            <dt>Texto:
+                <dd><textarea rows="5" cols = "48" name="campoTexto"></textarea></dd>
+                <dd><input type="submit" value="Publicar"></dd>
+        </dl>
+        
+    </form>
+{%endif%}
 
-<h1 style="color:red;">Aqui estarão as Entradas</h1>
 
-<h2>  Esse é o arquivo template html  </h2>
+{%endblock%}
 
